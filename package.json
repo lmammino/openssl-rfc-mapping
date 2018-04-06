@@ -21,7 +21,7 @@
     "build:mapping-json": "node src/cli.js > src/mapping.json",
     "coverage:publish": "codecov",
     "package:create": "pkg . -t node8-win,node8-macos,node8-linux --out-dir build",
-    "package:publish": "node scripts/publish-release $GITHUB_TOKEN lmammino/lumpy $npm_package_version",
+    "package:publish": "node scripts/publish-release $GITHUB_TOKEN lmammino/openssl-rfc-mapping $npm_package_version",
     "release:tag": "git tag $npm_package_version && git push --tags"
   },
   "keywords": [
