@@ -1,0 +1,70 @@
+{
+  "name": "openssl-rfc-mapping",
+  "version": "0.0.1",
+  "description": "A quick'n'dirty library and command line utility to map OpenSSL RFC to machine parseable data",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "engineStrict": true,
+  "main": "src/index.js",
+  "bin": {
+    "openssl-rfc-mapping": "src/cli.js",
+    "ssl-rfc-json": "src/cli.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test:lint": "eslint src",
+    "test:unit": "jest --verbose --coverage",
+    "test": "npm run test:lint && npm run test:unit",
+    "build:mapping-json": "node src/cli.js > src/mapping.json",
+    "coverage:publish": "codecov",
+    "package:create": "pkg . -t node8-win,node8-macos,node8-linux --out-dir build",
+    "package:publish": "node scripts/publish-release $GITHUB_TOKEN lmammino/lumpy $npm_package_version",
+    "release:tag": "git tag $npm_package_version && git push --tags"
+  },
+  "keywords": [
+    "SSL",
+    "TLS",
+    "Chipers",
+    "SuiteName",
+    "Mapping",
+    "RFC",
+    "Standard",
+    "CLI",
+    "JSON"
+  ],
+  "author": {
+    "name": "Luciano Mammino",
+    "url": "https://loige.co"
+  },
+  "repository": "https://github.com/lmammino/openssl-rfc-mapping",
+  "bugs": {
+    "url": "https://github.com/lmammino/openssl-rfc-mapping/issues"
+  },
+  "homepage": "https://github.com/lmammino/openssl-rfc-mapping#readme",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "got": "^8.3.0"
+  },
+  "devDependencies": {
+    "codecov": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.4.3",
+    "pkg": "^4.3.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}
