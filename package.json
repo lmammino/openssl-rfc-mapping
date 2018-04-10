@@ -1,6 +1,6 @@
 {
   "name": "openssl-rfc-mapping",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A quick'n'dirty library and command line utility to map OpenSSL RFC to machine parseable data",
   "engines": {
     "node": ">= 6.0.0"

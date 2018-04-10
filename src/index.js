@@ -19,7 +19,7 @@ const getMapping = () => new Promise((resolve, reject) => {
             keyExch: $(columns.get(2)).text().trim(),
             encryption: $(columns.get(3)).text().trim(),
             bits: $(columns.get(4)).text().trim(),
-            chiperSuiteName: $(columns.get(5)).text().trim()
+            cipherSuiteName: $(columns.get(5)).text().trim()
           }
         })
 
